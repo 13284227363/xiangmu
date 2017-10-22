@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title> 登录 - 简书 </title>
     <link rel="stylesheet" href="css/简书登录.css">
+    <script src="node_modules/vue/dist/vue.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -18,8 +19,8 @@
                     <p id="denglu">登录</p>
                 </a>
                 <p id="dian">·</p>
-                <a href="###">
-                     <p id="zhuce">注册</p>
+                <a href="http://localhost:63342/%E7%AE%80%E4%B9%A6/%E7%AE%80%E4%B9%A6-%E6%B3%A8%E5%86%8C.html?_ijt=pgo24bv7h3f2ffmj9gbn2crh2q">
+                     <p id="zhuce" v-bind:class="{ active: isActive }" v-on:mouseenter="mouseenter" v-on:mouseleave="mouseleave">注册</p>
                 </a>
             </div>
 
@@ -95,6 +96,25 @@
 
         </div>
     </div>
+
+    <script type="application/javascript">
+        var vm = new Vue({
+            el:"#zhuce",
+            data:{
+                isActive: false,
+            },
+            methods:{
+                mouseenter:function () {
+                    console.log("wwwww")
+                    this.isActive = true
+                },
+                mouseleave:function () {
+                    this.isActive = false
+                }
+            }
+        });
+
+    </script>
 </body>
 </html>
 
